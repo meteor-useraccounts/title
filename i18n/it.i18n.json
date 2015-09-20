@@ -1,0 +1,11 @@
+{
+  "change_password" : "cambia password",
+  "create_an_account" : "crea un account",
+  "log_in" : "accedi",
+  "register" : "registrati",
+  "reset_your_password" : "reimposta la tua password",
+  "retrieve_your_password" : "recupera la tua password",
+  "sign_in" : "registrati",
+  "sign_up" : "iscriviti",
+  "verify_email" : "verifica email"
+}
