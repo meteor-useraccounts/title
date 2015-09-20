@@ -6,5 +6,6 @@
 	"reset_your_password": "reset your password",
 	"retrieve_your_password": "retrieve your password",
 	"sign_in": "sign in",
-	"verifying_email": "verifying email"
+	"sign_up": "sign up",
+	"verify_email": "verify email"
 }
