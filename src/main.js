@@ -13,6 +13,4 @@ UALog.trace('Loading main.js');
 
 
 UALog.trace('Adding title module');
-var title = new UATitleModule();
-
-UserAccounts.registerModule(title);
+UserAccounts.registerModule(new UATitleModule());

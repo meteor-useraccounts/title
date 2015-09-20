@@ -15,17 +15,17 @@ Package.describe({
   name: 'useraccounts:title',
   summary: 'UserAccounts title package.',
   version: '2.0.0',
-  git: 'https://github.com/meteor-useraccounts/title.git'
+  git: 'https://github.com/meteor-useraccounts/title.git',
 });
 
-Package.onUse(function(api) {
+Package.onUse(function pkgOnUse(api) {
   api.versionsFrom('1.0');
 
   // Logger
   api.use([
     'jag:pince@0.0.9',
     'underscore',
-    'useraccounts:core@2.0.0'
+    'useraccounts:core@2.0.0',
   ], Both);
 
   api.imply([
@@ -45,8 +45,6 @@ Package.onUse(function(api) {
     'src/_globals.js',
     'src/logger.js',
     'src/modules/title_module.js',
-    'src/main.js'
+    'src/main.js',
   ], Both);
-
-
 });

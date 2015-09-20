@@ -13,7 +13,7 @@ UALog.trace('Loading title_module.js');
 
 
 // define the Student class
-UATitleModule = function () {
+UATitleModule = function() {
   // Call the parent constructor
   UAModule.call(this);
 
@@ -33,7 +33,7 @@ _.extend(UATitleModule.prototype, {
   // correct the constructor pointer because it points to UAModule
   constructor: UATitleModule,
 
-  configure: function(options) {
+  configure: function configure(options) {
     UALog.trace('configure ' + this._id);
     // console.log(options);
 
@@ -41,7 +41,7 @@ _.extend(UATitleModule.prototype, {
   },
 
   texts: {
-    default: {
+    'default': {
       title: 'useraccounts',
     },
     signIn: {
@@ -52,7 +52,7 @@ _.extend(UATitleModule.prototype, {
     },
   },
 
-  title: function() {
+  title: function title() {
     return this.getText('title');
   },
 });
