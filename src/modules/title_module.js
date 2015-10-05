@@ -1,4 +1,5 @@
 /* global
+    s: false,
     UALog: false,
     UAModule: false,
     UATitleModule: true
@@ -12,8 +13,8 @@
 UALog.trace('Loading title_module.js');
 
 
-// define the Student class
-UATitleModule = function() {
+// define the UATitleModule class
+UATitleModule = function _UATitleModule() {
   // Call the parent constructor
   UAModule.call(this);
 
@@ -34,15 +35,30 @@ _.extend(UATitleModule.prototype, {
   constructor: UATitleModule,
 
   configure: function configure(options) {
-    UALog.trace('configure ' + this._id);
-    // console.log(options);
+    var self = this;
 
-    this.texts = _.defaults(options.texts || {}, this.texts);
+    UALog.trace('UATitleModule.configure');
+
+    // Possibly pick up texts from the configuration options
+    /*
+    self.texts = _.defaults(
+      options.texts || {},
+      self.texts
+    );
+    */
+
+    // Possibly pick up text transforms from the configuration options
+    /*
+    self.textTransforms = _.defaults(
+      options.textTransforms || {},
+      self.textTransforms
+    );
+    */
   },
 
   texts: {
     'default': {
-      title: 'useraccounts',
+      title: 'ua',
     },
     signIn: {
       title: 'sign_in',
@@ -52,7 +68,8 @@ _.extend(UATitleModule.prototype, {
     },
   },
 
-  title: function title() {
-    return this.getText('title');
+  textTransforms: {
+    'default': null,
+    title: s.titleize,
   },
 });
