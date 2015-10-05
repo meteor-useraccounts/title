@@ -1,0 +1,17 @@
+/* global
+    UserAccounts: false
+*/
+/* jshint -W106 */
+'use strict';
+
+_.extend(UserAccounts.texts, {
+  change_password: 'change password',
+  create_an_account: 'create an account',
+  log_in: 'log in',
+  register: 'register',
+  reset_your_password: 'reset your password',
+  retrieve_your_password: 'retrieve your password',
+  sign_in: 'sign in',
+  sign_up: 'sign up',
+  verify_email: 'verify email',
+});

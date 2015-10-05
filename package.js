@@ -37,6 +37,7 @@ Package.onUse(function pkgOnUse(api) {
   ], Client);
 
   api.addFiles([
+    'src/texts.js',
     'src/templates/ua_title.html',
   ], Client);
 
