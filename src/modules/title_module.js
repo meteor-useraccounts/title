@@ -15,13 +15,17 @@ UALog.trace('Loading title_module.js');
 
 // define the UATitleModule class
 UATitleModule = function _UATitleModule() {
-  // Call the parent constructor
-  UAModule.call(this);
+  var self = this;
 
-  this._id = 'title';
-  this.position = 10;
-  this.template = 'uaTitle';
-  this.templateClass = 'title';
+  // Call the parent constructor
+  UAModule.call(self);
+
+  self._id = 'title';
+  self.position = 10;
+  self.skins = {};
+  self.template = 'uaTitle';
+  self.templateClass = 'title';
+  self.visible = true;
 };
 
 
@@ -30,10 +34,37 @@ UATitleModule.prototype = new UAModule();
 
 
 _.extend(UATitleModule.prototype, {
-
-  // correct the constructor pointer because it points to UAModule
   constructor: UATitleModule,
 
+  /**
+   *
+   */
+  texts: {
+    'default': {
+      title: 'ua',
+    },
+    signIn: {
+      title: 'sign_in',
+    },
+    signUp: {
+      title: 'register',
+    },
+  },
+
+  /**
+   *
+   */
+  textTransforms: {
+    'default': null,
+    title: s.titleize,
+  },
+
+  /**
+   * configure - description
+   *
+   * @param  {type} options description
+   * @return {type}         description
+   */
   configure: function configure(options) {
     var self = this;
 
@@ -54,22 +85,5 @@ _.extend(UATitleModule.prototype, {
       self.textTransforms
     );
     */
-  },
-
-  texts: {
-    'default': {
-      title: 'ua',
-    },
-    signIn: {
-      title: 'sign_in',
-    },
-    signUp: {
-      title: 'register',
-    },
-  },
-
-  textTransforms: {
-    'default': null,
-    title: s.titleize,
   },
 });
